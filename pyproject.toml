@@ -2,7 +2,8 @@
 name="passphrase-generator"
 authors = [{ name = "SypTitan" }]
 version="1.0.0"
-description="A passphrase generator inspired by XKCD"
+description="A passphrase generator inspired by XKCD #936"
+readme = "README.md"
 license = "MIT-feh"
 license-files = [ "LICENSE" ]
 requires-python = ">=3.12"
