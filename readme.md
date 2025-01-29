@@ -28,7 +28,7 @@ uv run generate 2               # Fancy Gate
 uv run generate -l              # dry dream grass sheep
 uv run generate -l 6            # slow warm high wise bridge moon
 uv run generate -s "-"          # Purple-Paper-Door-Town
-uv run generate -l -s "-" 3     # gray-bold-sword
+uv run generate -l -s "_" 3     # gray_bold_sword
 ```
 ---
 
