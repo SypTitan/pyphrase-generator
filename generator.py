@@ -36,7 +36,7 @@ def generate_noun() -> str:
 def generate_random_word() -> str:
     return random.choice([generate_adjective, generate_noun])()
 
-def generate_phrase(length: int = 4) -> str:
+def generate_phrase(length: int = 4, separator: str = " ") -> str:
     if (length < 1):
         return ""
     elif (length == 1):
@@ -45,12 +45,12 @@ def generate_phrase(length: int = 4) -> str:
         out: str = ""
         out += generate_adjective()
         for i in range(1, length - 1):
-            out += " " + generate_random_word()
-        out += " " + generate_noun()
+            out += separator + generate_random_word()
+        out += separator + generate_noun()
         return out
     
-def generate_pascal_phrase(length: int = 4) -> str:
-    return generate_phrase(length).title()
+def generate_pascal_phrase(length: int = 4, separator: str = " ") -> str:
+    return generate_phrase(length, separator).title()
 
 def positive(value):
     number = int(value)
@@ -61,14 +61,15 @@ def positive(value):
 def main_cli():
     parser = argparse.ArgumentParser(description="Generate a random phrase")
     parser.add_argument("-l", "--lowercase", action="store_true", help="Generate a fully lowercase passphrase")
+    parser.add_argument("-s", "--separator", type=str, help="The separator between words", default=" ")
     parser.add_argument("length", type=positive, nargs="?", help="The number of words in the phrase", default=4)
     
     args = parser.parse_args()
     
     if args.lowercase:
-        print(generate_phrase(args.length))
+        print(generate_phrase(args.length, args.separator))
     else:
-        print(generate_pascal_phrase(args.length))
+        print(generate_pascal_phrase(args.length, args.separator))
 
 if __name__=="__main__":
     l: int = 4

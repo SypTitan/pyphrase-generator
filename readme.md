@@ -17,10 +17,18 @@ To use the project, install uv, clone the repo, and run `uv sync`.
 
 ## Usage
 ```
-uv run generate         # Generate a 4-word passphrase
-uv run generate 2       # Generate a 2-word passphrase
-uv run generate -l      # Generate a 4-word lowercase passphrase
-uv run generate -l 6    # Generate a 6-word lowercase passphrase
+uv run generate [-l|--lowercase] [-s sep|--separator sep] [length]
+uv run gen [-l|--lowercase] [-s sep|--separator sep] [length]
+```
+
+## Examples
+```
+uv run generate                 # Lazy Slow Card Hope
+uv run generate 2               # Fancy Gate
+uv run generate -l              # dry dream grass sheep
+uv run generate -l 6            # slow warm high wise bridge moon
+uv run generate -s "-"          # Purple-Paper-Door-Town
+uv run generate -l -s "-" 3     # gray-bold-sword
 ```
 ---
 
